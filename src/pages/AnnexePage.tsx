@@ -48,6 +48,7 @@ const annexes: Record<string, AnnexeData> = {
       "Accès sécurisé via VPN et authentification multi-facteurs. Productions disponibles sur dépôt Git interne et documentation hébergée.",
     descriptif:
       "Déploiement complet d'une plateforme InduSaaS comprenant : la conteneurisation des services applicatifs avec Docker, la configuration réseau et le routage, la mise en place d'un système de monitoring avec Grafana et Prometheus, la gestion des logs centralisés, et la rédaction de la documentation technique complète du projet. L'IA a été utilisée comme outil d'assistance pour le prompting de configurations et la résolution de problèmes techniques.",
+    pdfRemplie: "/docs/Annexe_PPE1_remplie.pdf",
   },
   "2": {
     numero: "2",
