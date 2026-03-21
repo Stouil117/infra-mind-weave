@@ -112,13 +112,17 @@ const PPECard = ({ ppe }: { ppe: PPE }) => {
               Télécharger le dossier PPE
             </a>
           )}
-          <Link
-            to={`/annexe/${ppe.id}`}
-            className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono bg-secondary/10 text-secondary border border-secondary/30 rounded hover:bg-secondary/20 transition-colors"
-          >
-            <FileText size={13} />
-            Annexe VII-1-A (remplie)
-          </Link>
+          {ppe.annexePdf && (
+            <a
+              href={ppe.annexePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono bg-secondary/10 text-secondary border border-secondary/30 rounded hover:bg-secondary/20 transition-colors"
+            >
+              <FileText size={13} />
+              Annexe VII-1-A (remplie)
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
