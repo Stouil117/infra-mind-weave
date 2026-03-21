@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -227,6 +227,19 @@ const AnnexePage = () => {
                   Descriptif de la réalisation professionnelle
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">{annexe.descriptif}</p>
+              </div>
+
+              {/* Télécharger le modèle PDF */}
+              <div className="pt-4 border-t border-border">
+                <a
+                  href="/docs/Annexe_VII-1-A_modele.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono bg-primary/10 text-primary border border-primary/30 rounded hover:bg-primary/20 transition-colors"
+                >
+                  <Download size={14} />
+                  Télécharger l'annexe VII-1-A (PDF)
+                </a>
               </div>
             </div>
           </motion.div>
