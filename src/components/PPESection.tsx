@@ -11,6 +11,7 @@ interface PPE {
   competences: string[];
   outils: string[];
   pdfLink?: string;
+  annexePdf?: string;
 }
 
 const ppes: PPE[] = [
