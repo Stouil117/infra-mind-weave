@@ -231,16 +231,27 @@ const AnnexePage = () => {
                 <p className="text-muted-foreground leading-relaxed">{annexe.descriptif}</p>
               </div>
 
-              {/* Télécharger le modèle PDF */}
-              <div className="pt-4 border-t border-border">
+              {/* Télécharger le PDF */}
+              <div className="pt-4 border-t border-border flex flex-wrap gap-3">
+                {annexe.pdfRemplie && (
+                  <a
+                    href={annexe.pdfRemplie}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono bg-primary/10 text-primary border border-primary/30 rounded hover:bg-primary/20 transition-colors"
+                  >
+                    <Download size={14} />
+                    Télécharger l'annexe remplie (PDF)
+                  </a>
+                )}
                 <a
                   href="/docs/Annexe_VII-1-A_modele.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono bg-primary/10 text-primary border border-primary/30 rounded hover:bg-primary/20 transition-colors"
+                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono bg-muted/50 text-muted-foreground border border-border rounded hover:bg-muted transition-colors"
                 >
                   <Download size={14} />
-                  Télécharger l'annexe VII-1-A (PDF)
+                  Modèle vierge (PDF)
                 </a>
               </div>
             </div>
