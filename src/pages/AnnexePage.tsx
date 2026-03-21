@@ -17,6 +17,7 @@ interface AnnexeData {
   ressourcesUtilisees: string[];
   modalitesAcces: string;
   descriptif: string;
+  pdfRemplie?: string;
 }
 
 const annexes: Record<string, AnnexeData> = {
