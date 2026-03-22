@@ -26,7 +26,6 @@ const ppes: PPE[] = [
     competences: ["Support et mise à disposition de services informatiques", "SISR4 — Administration des systèmes", "SISR5 — Supervision des réseaux"],
     outils: ["Docker", "Linux", "Cloud", "IA Prompting", "Monitoring"],
     pdfLink: "/docs/PPE1_InduSaaS.pdf",
-    annexePdf: "/docs/Annexe_PPE1_remplie.pdf",
   },
   {
     id: 2,
