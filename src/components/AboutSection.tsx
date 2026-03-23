@@ -16,11 +16,11 @@ const AboutSection = () => {
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-primary text-glow mb-2">
             À PROPOS
           </h2>
-          <div className="w-24 h-0.5 bg-primary mb-10" />
+          <div className="w-24 h-0.5 bg-gold mb-10" />
 
           <div className="glass-card rounded-lg p-8 md:p-10 box-glow">
             <p className="text-foreground leading-relaxed text-lg mb-6">
-              Je suis étudiant en <span className="text-primary font-semibold">BTS SIO option SISR</span>, 
+              Je suis étudiant en <span className="text-gold font-semibold">BTS SIO option SISR</span>, 
               spécialisé dans les infrastructures systèmes, réseaux et la cybersécurité.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
@@ -35,20 +35,44 @@ const AboutSection = () => {
               infrastructures informatiques.
             </p>
           </div>
+        </motion.div>
 
-          {/* Logos */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-10">
+        {/* Partenaires & Formation */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16"
+        >
+          <h3 className="font-orbitron text-lg font-semibold text-gold text-glow-gold mb-6 text-center tracking-wider">
+            PARTENAIRES & FORMATION
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-10">
             {[
-              { src: logoCetim, alt: "CETIM" },
-              { src: logoPromeo, alt: "Promeo" },
-              { src: logoSenlis, alt: "Senlis" },
-            ].map((logo) => (
-              <div
+              { src: logoCetim, alt: "CETIM", label: "Entreprise" },
+              { src: logoPromeo, alt: "Promeo", label: "Formation" },
+              { src: logoSenlis, alt: "BTS SIO", label: "Diplôme" },
+            ].map((logo, i) => (
+              <motion.div
                 key={logo.alt}
-                className="w-24 h-24 glass-card rounded-lg p-3 flex items-center justify-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className="flex flex-col items-center gap-3 group"
               >
-                <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain" />
-              </div>
+                <div className="w-20 h-20 glass-card rounded-lg p-3 flex items-center justify-center box-glow-gold group-hover:scale-110 transition-transform duration-300">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="w-full h-full object-contain logo-neon"
+                  />
+                </div>
+                <span className="text-xs font-mono text-gold/70 uppercase tracking-wider">
+                  {logo.label}
+                </span>
+              </motion.div>
             ))}
           </div>
         </motion.div>
