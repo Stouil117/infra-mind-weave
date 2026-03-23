@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 
 const navItems = [
   { label: "Accueil", href: "#hero" },
   { label: "À propos", href: "#about" },
+  { label: "Expérience", href: "#experience" },
   { label: "Qualités", href: "#qualities" },
   { label: "Projets PPE", href: "#ppe" },
   { label: "Veille", href: "#veille" },
-  { label: "Objectif", href: "#objectif" },
+  { label: "Projet d'étude", href: "#objectif" },
 ];
 
 const Navbar = () => {
@@ -31,12 +32,13 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="font-orbitron text-lg font-bold text-primary text-glow tracking-wider">
-          S.TOUIL
+        <a href="#hero" className="font-orbitron text-lg font-bold tracking-wider">
+          <span className="text-primary text-glow">S.</span>
+          <span className="text-gold">TOUIL</span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
               key={item.href}

@@ -6,6 +6,7 @@ const qualities = [
     icon: Brain,
     title: "Intelligence stratégique",
     desc: "Capacité à analyser une situation technique dans son ensemble afin de prendre des décisions pertinentes et concevoir des solutions durables.",
+    gold: true,
   },
   {
     icon: Network,
@@ -21,6 +22,7 @@ const qualities = [
     icon: Radar,
     title: "Curiosité technologique",
     desc: "Veille permanente sur les évolutions technologiques, notamment dans les domaines de l'IA, du machine learning et des infrastructures intelligentes.",
+    gold: true,
   },
 ];
 
@@ -49,14 +51,22 @@ const QualitiesSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="glass-card rounded-lg p-6 hover:box-glow transition-all duration-500 group"
+                className={`glass-card rounded-lg p-6 transition-all duration-500 group hover:scale-[1.02] ${
+                  q.gold ? "hover:box-glow-gold hover:border-gold/40" : "hover:box-glow"
+                }`}
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-md bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                  <div className={`p-3 rounded-md transition-colors ${
+                    q.gold
+                      ? "bg-gold/10 text-gold group-hover:bg-gold/20"
+                      : "bg-primary/10 text-primary group-hover:bg-primary/20"
+                  }`}>
                     <q.icon size={24} />
                   </div>
                   <div>
-                    <h3 className="font-orbitron text-sm font-semibold text-foreground mb-2">
+                    <h3 className={`font-orbitron text-sm font-semibold mb-2 ${
+                      q.gold ? "text-gold" : "text-foreground"
+                    }`}>
                       {q.title}
                     </h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{q.desc}</p>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { FileText, Calendar, Building2, Download } from "lucide-react";
+import { FileText, Calendar, Building2, Download, ChevronRight } from "lucide-react";
+import { useState } from "react";
 
 interface PPE {
   id: number;
@@ -53,62 +54,93 @@ const ppes: PPE[] = [
   },
 ];
 
-const PPECard = ({ ppe }: { ppe: PPE }) => {
+const PPECard = ({ ppe, index }: { ppe: PPE; index: number }) => {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="glass-card rounded-lg overflow-hidden hover:box-glow transition-all duration-500"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="glass-card rounded-lg overflow-hidden group relative transition-all duration-500 hover:border-gold/50"
+      style={{
+        boxShadow: hovered
+          ? "0 0 25px hsl(43 74% 52% / 0.25), 0 0 50px hsl(43 74% 52% / 0.1), inset 0 0 20px hsl(43 74% 52% / 0.05)"
+          : "none",
+      }}
     >
-      <div className="p-6 md:p-8">
+      {/* Top accent bar */}
+      <div className="h-1 w-full bg-gradient-to-r from-primary via-gold to-primary" />
+
+      <div className="p-6">
+        {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h3 className="font-orbitron text-lg font-bold text-primary">{ppe.title}</h3>
-            <p className="text-muted-foreground text-sm">{ppe.subtitle}</p>
+            <h3 className="font-orbitron text-base font-bold text-gold group-hover:text-glow-gold transition-all">
+              {ppe.title}
+            </h3>
+            <p className="text-muted-foreground text-sm mt-1">{ppe.subtitle}</p>
           </div>
-          <div className="text-right text-xs font-mono text-muted-foreground">
+          <div className="text-right text-[10px] font-mono text-muted-foreground shrink-0 ml-4">
             <div className="flex items-center gap-1 mb-1">
-              <Calendar size={12} />
+              <Calendar size={10} />
               <span>{ppe.date}</span>
             </div>
             <div className="flex items-center gap-1">
-              <Building2 size={12} />
+              <Building2 size={10} />
               <span>{ppe.context}</span>
             </div>
           </div>
         </div>
 
-        <p className="text-foreground/80 text-sm leading-relaxed mb-4">{ppe.description}</p>
+        <p className="text-foreground/70 text-sm leading-relaxed mb-5">{ppe.description}</p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {ppe.outils.map((o) => (
-            <span key={o} className="px-2 py-0.5 text-[10px] font-mono uppercase bg-primary/10 text-primary border border-primary/20 rounded-sm">
-              {o}
-            </span>
-          ))}
+        {/* Outils - revealed with gold glow on hover */}
+        <div className="mb-4">
+          <span className="text-[10px] font-mono text-gold/70 uppercase tracking-wider mb-2 block">
+            Technologies
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {ppe.outils.map((o) => (
+              <span
+                key={o}
+                className="px-2.5 py-1 text-[10px] font-mono uppercase bg-gold/10 text-gold border border-gold/25 rounded-sm transition-all duration-300 group-hover:bg-gold/20 group-hover:border-gold/40"
+              >
+                {o}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {ppe.competences.map((c) => (
-            <span key={c} className="px-2 py-0.5 text-[10px] font-mono bg-secondary/10 text-secondary border border-secondary/20 rounded-sm">
-              {c}
-            </span>
-          ))}
+        {/* Compétences */}
+        <div className="mb-5">
+          <span className="text-[10px] font-mono text-primary/70 uppercase tracking-wider mb-2 block">
+            Compétences
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            {ppe.competences.map((c) => (
+              <span key={c} className="px-2 py-0.5 text-[10px] font-mono bg-primary/10 text-primary/80 border border-primary/20 rounded-sm">
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Liens PDF + Annexe */}
+        {/* Actions */}
         <div className="flex flex-wrap gap-3">
           {ppe.pdfLink && (
             <a
               href={ppe.pdfLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-mono bg-primary/10 text-primary border border-primary/30 rounded hover:bg-primary/20 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono bg-gold/10 text-gold border border-gold/30 rounded hover:bg-gold/20 hover:border-gold/50 transition-all duration-300 group/btn"
             >
               <Download size={13} />
               Télécharger le dossier PPE
+              <ChevronRight size={12} className="group-hover/btn:translate-x-0.5 transition-transform" />
             </a>
           )}
           {ppe.annexePdf && (
@@ -131,24 +163,25 @@ const PPECard = ({ ppe }: { ppe: PPE }) => {
 const PPESection = () => {
   return (
     <section id="ppe" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="mb-12"
         >
-          <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-primary text-glow mb-2">
+          <h2 className="font-orbitron text-3xl md:text-4xl font-bold text-gold text-glow-gold mb-2">
             PROJETS PPE
           </h2>
-          <p className="font-mono text-xs text-muted-foreground mb-10 tracking-wider">
+          <p className="font-mono text-xs text-muted-foreground tracking-wider">
             // épreuves_professionnelles_encadrées
           </p>
         </motion.div>
 
-        <div className="space-y-6">
-          {ppes.map((ppe) => (
-            <PPECard key={ppe.id} ppe={ppe} />
+        <div className="grid md:grid-cols-3 gap-6">
+          {ppes.map((ppe, i) => (
+            <PPECard key={ppe.id} ppe={ppe} index={i} />
           ))}
         </div>
       </div>
