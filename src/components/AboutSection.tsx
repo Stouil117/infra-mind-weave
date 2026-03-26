@@ -52,7 +52,7 @@ const AboutSection = () => {
             {[
               { src: logoCetim, alt: "CETIM", label: "Entreprise" },
               { src: logoPromeo, alt: "UIMM – Promeo", label: "Formation" },
-              { src: logoSenlis, alt: "Deep Learning", label: "Diplôme" },
+              { src: logoSenlis, alt: "BTS SIO", label: "Diplôme" },
             ].map((logo, i) => (
               <motion.div
                 key={logo.alt}
