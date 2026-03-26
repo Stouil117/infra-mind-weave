@@ -48,11 +48,11 @@ const AboutSection = () => {
           <h3 className="font-orbitron text-lg font-semibold text-gold text-glow-gold mb-6 text-center tracking-wider">
             PARTENAIRES & FORMATION
           </h3>
-          <div className="flex flex-wrap items-center justify-center gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {[
               { src: logoCetim, alt: "CETIM", label: "Entreprise" },
-              { src: logoPromeo, alt: "Promeo", label: "Formation" },
-              { src: logoSenlis, alt: "BTS SIO", label: "Diplôme" },
+              { src: logoPromeo, alt: "UIMM – La Fabrique de l'Avenir", label: "Formation" },
+              { src: logoSenlis, alt: "Ville de Senlis", label: "Diplôme" },
             ].map((logo, i) => (
               <motion.div
                 key={logo.alt}
@@ -60,16 +60,19 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className="flex flex-col items-center gap-3 group"
+                className="flex flex-col items-center gap-4 group"
               >
-                <div className="w-20 h-20 glass-card rounded-lg p-3 flex items-center justify-center box-glow-gold group-hover:scale-110 transition-transform duration-300">
+                <div className="w-28 h-28 md:w-32 md:h-32 glass-card rounded-xl p-4 flex items-center justify-center box-glow-gold group-hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)]">
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    className="w-full h-full object-contain logo-neon"
+                    loading="lazy"
+                    width={512}
+                    height={512}
+                    className="w-full h-full object-contain invert brightness-200 opacity-90 group-hover:opacity-100 transition-all duration-300"
                   />
                 </div>
-                <span className="text-xs font-mono text-gold/70 uppercase tracking-wider">
+                <span className="text-xs font-mono text-gold/70 uppercase tracking-widest group-hover:text-gold transition-colors duration-300">
                   {logo.label}
                 </span>
               </motion.div>
