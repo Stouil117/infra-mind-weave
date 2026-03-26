@@ -51,8 +51,8 @@ const AboutSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {[
               { src: logoCetim, alt: "CETIM", label: "Entreprise" },
-              { src: logoPromeo, alt: "UIMM – La Fabrique de l'Avenir", label: "Formation" },
-              { src: logoSenlis, alt: "Ville de Senlis", label: "Diplôme" },
+              { src: logoPromeo, alt: "UIMM – Promeo", label: "Formation" },
+              { src: logoSenlis, alt: "Deep Learning", label: "Diplôme" },
             ].map((logo, i) => (
               <motion.div
                 key={logo.alt}
@@ -62,14 +62,14 @@ const AboutSection = () => {
                 transition={{ delay: i * 0.15 }}
                 className="flex flex-col items-center gap-4 group"
               >
-                <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl p-5 flex items-center justify-center bg-white/10 border border-gold/20 box-glow-gold group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300 group-hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)]">
+                <div className="w-32 h-32 md:w-36 md:h-36 rounded-xl p-3 flex items-center justify-center bg-white rounded-xl border border-gold/30 box-glow-gold group-hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)]">
                   <img
                     src={logo.src}
                     alt={logo.alt}
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="w-full h-full object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_8px_hsl(var(--gold)/0.4)]"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <span className="text-xs font-mono text-gold/70 uppercase tracking-widest group-hover:text-gold transition-colors duration-300">
