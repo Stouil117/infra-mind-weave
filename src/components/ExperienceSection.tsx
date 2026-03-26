@@ -13,8 +13,8 @@ const missions = [
 ];
 
 const timelineSteps = [
-  { year: "2022", label: "Bac Scientifique", detail: "Obtention du baccalauréat" },
-  { year: "2023", label: "CETIM — Alternance", detail: "Technicien Helpdesk" },
+  { year: "2023", label: "Bac Scientifique", detail: "Obtention du baccalauréat" },
+  { year: "2024–2026", label: "CETIM — Alternance", detail: "Technicien Helpdesk" },
   { year: "2024–2026", label: "BTS SIO SISR", detail: "Promeo — Senlis" },
 ];
 
