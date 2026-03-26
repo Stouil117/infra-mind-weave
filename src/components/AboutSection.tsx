@@ -62,14 +62,14 @@ const AboutSection = () => {
                 transition={{ delay: i * 0.15 }}
                 className="flex flex-col items-center gap-4 group"
               >
-                <div className="w-28 h-28 md:w-32 md:h-32 glass-card rounded-xl p-4 flex items-center justify-center box-glow-gold group-hover:scale-110 transition-all duration-300 group-hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)]">
+                <div className="w-28 h-28 md:w-32 md:h-32 rounded-xl p-5 flex items-center justify-center bg-white/10 border border-gold/20 box-glow-gold group-hover:scale-110 group-hover:bg-white/15 transition-all duration-300 group-hover:shadow-[0_0_30px_hsl(var(--gold)/0.5)]">
                   <img
                     src={logo.src}
                     alt={logo.alt}
                     loading="lazy"
                     width={512}
                     height={512}
-                    className="w-full h-full object-contain invert brightness-200 opacity-90 group-hover:opacity-100 transition-all duration-300"
+                    className="w-full h-full object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_8px_hsl(var(--gold)/0.4)]"
                   />
                 </div>
                 <span className="text-xs font-mono text-gold/70 uppercase tracking-widest group-hover:text-gold transition-colors duration-300">
