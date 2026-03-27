@@ -5,11 +5,13 @@ import { Menu, X, Download } from "lucide-react";
 const navItems = [
   { label: "Accueil", href: "#hero" },
   { label: "À propos", href: "#about" },
+  { label: "Stack", href: "#skills" },
   { label: "Expérience", href: "#experience" },
   { label: "Qualités", href: "#qualities" },
   { label: "Projets PPE", href: "#ppe" },
   { label: "Veille", href: "#veille" },
   { label: "Projet d'étude", href: "#objectif" },
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {

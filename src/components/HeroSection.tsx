@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
-import { Download } from "lucide-react";
+import { Download, Linkedin, Mail } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -67,6 +67,25 @@ const HeroSection = () => {
             Étudiant en BTS SIO option SISR, passionné par l'intelligence artificielle,
             les infrastructures informatiques et l'automatisation des systèmes.
           </p>
+          {/* Social links */}
+          <div className="mt-6 flex justify-center gap-4">
+            <a
+              href="mailto:sofianetouil50@gmail.com"
+              className="p-2 border border-primary/30 text-primary/70 hover:text-primary hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 rounded-sm"
+              aria-label="Email"
+            >
+              <Mail size={18} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sofiane-touil-63b467200/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 border border-primary/30 text-primary/70 hover:text-primary hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 rounded-sm"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
         </motion.div>
 
         <motion.div
