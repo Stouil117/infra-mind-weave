@@ -23,7 +23,7 @@ const ppes: PPE[] = [
     date: "10 décembre 2025",
     context: "CETIM — Senlis",
     description:
-      "Conception et déploiement d'une plateforme SaaS industrielle pour le CETIM. Mise en place d'une infrastructure cloud, gestion des données industrielles et intégration d'outils de monitoring.",
+      "Conception et déploiement d'une plateforme SaaS industrielle pour le CETIM. Mise en place d'une infrastructure cloud, gestion des données industrielles et d'outils de monitoring.",
     competences: ["Support et mise à disposition de services informatiques", "SISR4 — Administration des systèmes", "SISR5 — Supervision des réseaux"],
     outils: ["Docker", "Linux", "Cloud", "IA Prompting", "Monitoring"],
     pdfLink: "/docs/PPE1_InduSaaS.pdf",
