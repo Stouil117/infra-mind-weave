@@ -96,41 +96,8 @@ const PPECard = ({ ppe, index }: { ppe: PPE; index: number }) => {
           </div>
         </div>
 
-        <p className="text-foreground/70 text-sm leading-relaxed mb-5">{ppe.description}</p>
-
-        {/* Outils - revealed with gold glow on hover */}
-        <div className="mb-4">
-          <span className="text-[10px] font-mono text-gold/70 uppercase tracking-wider mb-2 block">
-            Technologies
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {ppe.outils.map((o) => (
-              <span
-                key={o}
-                className="px-2.5 py-1 text-[10px] font-mono uppercase bg-gold/10 text-gold border border-gold/25 rounded-sm transition-all duration-300 group-hover:bg-gold/20 group-hover:border-gold/40"
-              >
-                {o}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Compétences */}
-        <div className="mb-5">
-          <span className="text-[10px] font-mono text-primary/70 uppercase tracking-wider mb-2 block">
-            Compétences
-          </span>
-          <div className="flex flex-wrap gap-1.5">
-            {ppe.competences.map((c) => (
-              <span key={c} className="px-2 py-0.5 text-[10px] font-mono bg-primary/10 text-primary/80 border border-primary/20 rounded-sm">
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Actions */}
-        <div className="flex flex-wrap gap-3">
+        {/* Actions - en haut */}
+        <div className="flex flex-wrap gap-3 mb-5">
           {ppe.pdfLink && (
             <a
               href={ppe.pdfLink}
@@ -154,6 +121,39 @@ const PPECard = ({ ppe, index }: { ppe: PPE; index: number }) => {
               Annexe VII-1-A (remplie)
             </a>
           )}
+        </div>
+
+        <p className="text-foreground/70 text-sm leading-relaxed mb-5">{ppe.description}</p>
+
+        {/* Outils */}
+        <div className="mb-4">
+          <span className="text-[10px] font-mono text-gold/70 uppercase tracking-wider mb-2 block">
+            Technologies
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {ppe.outils.map((o) => (
+              <span
+                key={o}
+                className="px-2.5 py-1 text-[10px] font-mono uppercase bg-gold/10 text-gold border border-gold/25 rounded-sm transition-all duration-300 group-hover:bg-gold/20 group-hover:border-gold/40"
+              >
+                {o}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Compétences */}
+        <div>
+          <span className="text-[10px] font-mono text-primary/70 uppercase tracking-wider mb-2 block">
+            Compétences
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            {ppe.competences.map((c) => (
+              <span key={c} className="px-2 py-0.5 text-[10px] font-mono bg-primary/10 text-primary/80 border border-primary/20 rounded-sm">
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>
