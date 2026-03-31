@@ -101,7 +101,7 @@ const HeroSection = () => {
             Explorer →
           </a>
           <a
-            href="/docs/Annexe_VI5_Tableau_Synthese.pdf"
+            href="/docs/Tableau_Synthese_TOUIL_SOFIANE.xlsx"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gold/10 border border-gold/50 text-gold font-mono text-sm uppercase tracking-wider hover:bg-gold/20 transition-all duration-300 box-glow-gold"
