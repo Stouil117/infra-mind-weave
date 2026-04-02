@@ -518,7 +518,61 @@ const ExperienceSection = () => {
             </div>
           </SectionCard>
 
-          {/* 6. CONCLUSION */}
+          {/* 6. OPTIMISATION XOLIDO */}
+          <SectionCard>
+            <div className="p-6 md:p-8">
+              <h3 className="font-orbitron text-base font-bold text-gold mb-2">SITUATION : OPTIMISATION DU TRAITEMENT DES TICKETS XOLIDO</h3>
+              <p className="text-foreground/60 text-xs font-mono mb-6">// amélioration_processus</p>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="relative p-6 rounded-md border border-gold/30 bg-gold/5"
+                style={{ boxShadow: "0 0 30px hsl(43 74% 52% / 0.1)" }}
+              >
+                <Wrench size={20} className="text-gold absolute top-4 right-4" />
+
+                <div className="space-y-4">
+                  <div>
+                    <span className="text-xs font-mono text-destructive/80 uppercase tracking-wider block mb-1">Constat</span>
+                    <p className="text-sm text-foreground/80">
+                      Dans le cadre de la gestion des tickets via Xolido, certains champs comme l'approbateur et le rédacteur étaient renseignés <span className="text-destructive font-semibold">manuellement</span>, ce qui entraînait une perte de temps et des risques d'erreurs.
+                    </p>
+                  </div>
+
+                  <div className="w-full h-px bg-gold/20" />
+
+                  <div>
+                    <span className="text-xs font-mono text-primary/80 uppercase tracking-wider block mb-1">Analyse</span>
+                    <p className="text-sm text-foreground/80">
+                      Après analyse du fonctionnement, j'ai identifié que ces informations pouvaient être <span className="text-primary font-semibold">automatisées</span>.
+                    </p>
+                  </div>
+
+                  <div className="w-full h-px bg-gold/20" />
+
+                  <div>
+                    <span className="text-xs font-mono text-gold/80 uppercase tracking-wider block mb-1">Solution</span>
+                    <p className="text-sm text-foreground/80">
+                      J'ai proposé une amélioration en modifiant le <span className="text-gold font-semibold">fichier XML de configuration</span>, permettant de pré-remplir automatiquement certains champs.
+                    </p>
+                  </div>
+
+                  <div className="w-full h-px bg-gold/20" />
+
+                  <div>
+                    <span className="text-xs font-mono text-secondary/80 uppercase tracking-wider block mb-1">Résultat</span>
+                    <p className="text-sm text-foreground/80">
+                      Cette optimisation a permis de <span className="text-secondary font-semibold">gagner du temps</span>, de fiabiliser le processus et d'améliorer l'efficacité globale du traitement des tickets.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </SectionCard>
+
+          {/* 7. CONCLUSION */}
           <SectionCard>
             <div className="p-6 md:p-8">
               <h3 className="font-orbitron text-base font-bold text-gold mb-4">BILAN</h3>
