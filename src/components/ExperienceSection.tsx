@@ -212,6 +212,39 @@ const ExperienceSection = () => {
             </div>
           </SectionCard>
 
+          {/* ANALYSE DU SI */}
+          <SectionCard>
+            <div className="p-6 md:p-8">
+              <h3 className="font-orbitron text-base font-bold text-gold mb-2">
+                ANALYSE DU SYSTÈME D'INFORMATION
+              </h3>
+              <p className="text-foreground/60 text-xs font-mono mb-6">// vision_stratégique</p>
+
+              <div className="space-y-4 text-sm text-foreground/80 leading-relaxed">
+                <p>
+                  Le CETIM est une structure dans laquelle le système d'information joue un <span className="text-gold font-semibold">rôle central</span> dans les activités industrielles et de recherche.
+                </p>
+                <p>
+                  Loin d'être un simple support, l'informatique constitue un <span className="text-gold font-semibold">levier de performance globale</span>, permettant d'assurer la continuité des activités, la productivité des équipes et la sécurisation des données.
+                </p>
+                <p>
+                  Au cours de mon expérience, j'ai compris que le système d'information fonctionne comme un <span className="text-primary font-semibold">écosystème</span>, où chaque composant (réseau, système, utilisateurs) est interconnecté.
+                </p>
+                <p>
+                  Ainsi, un incident technique peut avoir des impacts bien plus larges qu'un simple dysfonctionnement local, en affectant l'organisation et l'efficacité globale de l'entreprise.
+                </p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  className="p-4 rounded-md border border-gold/25 bg-gold/5 italic text-foreground/70"
+                >
+                  "Le rôle du support informatique, et notamment du helpdesk, est donc essentiel puisqu'il constitue le <span className="text-gold font-semibold not-italic">point d'entrée du système d'information</span> et le premier niveau de garantie de sa stabilité."
+                </motion.p>
+              </div>
+            </div>
+          </SectionCard>
+
           {/* 2. PROCESSUS DE SUPPORT — WORKFLOW GLPI */}
           <SectionCard>
             <div className="p-6 md:p-8">
