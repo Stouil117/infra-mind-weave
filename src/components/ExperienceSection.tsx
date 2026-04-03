@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Shield, Wrench, Monitor, Users, Smartphone, Server, Network, AlertTriangle, CheckCircle2, ArrowRight, Zap, Clock, MessageSquare, GitBranch, Cloud } from "lucide-react";
+import { Briefcase, Building2, Shield, Wrench, Monitor, Users, Smartphone, Server, Network, AlertTriangle, CheckCircle2, ArrowRight, Zap, Clock, MessageSquare, GitBranch, Cloud, Bot } from "lucide-react";
 import logoCetim from "@/assets/logo-cetim.png";
 import { useState } from "react";
 
@@ -645,7 +645,56 @@ const ExperienceSection = () => {
             </div>
           </SectionCard>
 
-          {/* 7. CONCLUSION */}
+          {/* 7. PROJET IA SUPPORT */}
+          <SectionCard>
+            <div className="p-6 md:p-8 space-y-5">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
+                  <Bot size={18} className="text-primary" />
+                </div>
+                <h3 className="font-orbitron text-base font-bold text-primary">
+                  PROJET D'AUTOMATISATION DU SUPPORT VIA IA
+                </h3>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Dans une logique d'<span className="text-primary font-semibold">amélioration continue</span> du support informatique, j'ai réfléchi à la mise en place d'un système basé sur l'intelligence artificielle afin d'assister les utilisateurs dans la résolution de problèmes simples.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {[
+                    { title: "Base de connaissances", desc: "Exploiter les tickets GLPI existants pour identifier les problèmes récurrents et leurs solutions.", color: "primary" },
+                    { title: "Assistance intelligente", desc: "Proposer automatiquement des solutions et guider l'utilisateur étape par étape.", color: "gold" },
+                    { title: "Impact", desc: "Réduire la charge helpdesk, améliorer la réactivité et rendre les utilisateurs autonomes.", color: "secondary" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="glass-card rounded-lg p-4 border border-primary/10"
+                    >
+                      <span className={`text-xs font-mono text-${item.color}/80 uppercase tracking-wider block mb-1`}>{item.title}</span>
+                      <p className="text-xs text-foreground/70 leading-relaxed">{item.desc}</p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <p className="text-xs text-foreground/60 italic border-l-2 border-primary/30 pl-3">
+                  Ce projet s'inscrit dans une démarche de transformation du support informatique vers des solutions intelligentes et automatisées.
+                </p>
+              </motion.div>
+            </div>
+          </SectionCard>
+
+          {/* 8. CONCLUSION */}
           <SectionCard>
             <div className="p-6 md:p-8">
               <h3 className="font-orbitron text-base font-bold text-gold mb-4">BILAN</h3>
