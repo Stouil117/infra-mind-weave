@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Shield, Wrench, Monitor, Users, Smartphone, Server, Network, AlertTriangle, CheckCircle2, ArrowRight, Zap, Clock, MessageSquare, GitBranch } from "lucide-react";
+import { Briefcase, Building2, Shield, Wrench, Monitor, Users, Smartphone, Server, Network, AlertTriangle, CheckCircle2, ArrowRight, Zap, Clock, MessageSquare, GitBranch, Cloud } from "lucide-react";
 import logoCetim from "@/assets/logo-cetim.png";
 import { useState } from "react";
 
