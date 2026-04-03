@@ -101,21 +101,13 @@ const HeroSection = () => {
             Explorer →
           </a>
           <a
-            href="/docs/Tableau_Synthese_TOUIL_SOFIANE.pdf"
+            href="/docs/Tableau_Synthese_TOUIL_SOFIANE_EQUILIBRE_2.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3 bg-gold/10 border border-gold/50 text-gold font-mono text-sm uppercase tracking-wider hover:bg-gold/20 transition-all duration-300 box-glow-gold"
           >
             <Download size={14} />
             Tableau de Synthèse (Annexe VI.5)
-          </a>
-          <a
-            href="/docs/Tableau_Synthese_TOUIL_SOFIANE_EQUILIBRE.xlsx"
-            download
-            className="inline-flex items-center gap-2 px-8 py-3 bg-primary/10 border border-primary/50 text-primary font-mono text-sm uppercase tracking-wider hover:bg-primary/20 transition-all duration-300 box-glow"
-          >
-            <Download size={14} />
-            Synthèse Excel (Équilibré)
           </a>
         </motion.div>
       </div>
