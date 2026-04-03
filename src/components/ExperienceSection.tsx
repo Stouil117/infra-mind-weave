@@ -473,6 +473,79 @@ const ExperienceSection = () => {
             </div>
           </SectionCard>
 
+          {/* TRANSITION CLOUD — MICROSOFT INTUNE */}
+          <SectionCard>
+            <div className="p-6 md:p-8">
+              <h3 className="font-orbitron text-base font-bold text-gold mb-2">TRANSITION VERS LA GESTION CLOUD</h3>
+              <p className="text-foreground/60 text-xs font-mono mb-6">// microsoft_intune</p>
+
+              <div className="space-y-5">
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Dans une logique d'évolution des pratiques, la gestion des postes a progressivement évolué d'un modèle traditionnel basé sur <span className="text-gold font-semibold">MDT</span> vers une approche cloud avec <span className="text-gold font-semibold">Microsoft Intune</span>.
+                </p>
+
+                {/* Comparaison MDT vs Intune */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="p-5 rounded-md border border-foreground/10 bg-foreground/5"
+                  >
+                    <span className="text-xs font-mono text-foreground/50 uppercase tracking-wider mb-3 block flex items-center gap-2">
+                      <Server size={12} />
+                      MDT — On-Premise
+                    </span>
+                    <ul className="space-y-2">
+                      {["Infrastructure locale requise", "Déploiement via PXE / réseau interne", "Dépendance au réseau physique"].map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <span className="text-foreground/40 mt-0.5">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="p-5 rounded-md border border-gold/30 bg-gold/5"
+                    style={{ boxShadow: "0 0 20px hsl(43 74% 52% / 0.08)" }}
+                  >
+                    <span className="text-xs font-mono text-gold uppercase tracking-wider mb-3 block flex items-center gap-2">
+                      <Cloud size={12} />
+                      Intune — Cloud
+                    </span>
+                    <ul className="space-y-2">
+                      {["Gestion à distance via Internet", "Configuration automatique des postes", "Déploiement d'applications & politiques de sécurité"].map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-sm text-gold/80">
+                          <CheckCircle2 size={14} className="text-gold mt-0.5 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </div>
+
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Contrairement à MDT, qui repose sur une infrastructure locale, Intune permet de gérer les équipements à distance, sans dépendre du réseau interne de l'entreprise. Cette approche offre une plus grande <span className="text-gold font-semibold">flexibilité</span>, notamment pour les utilisateurs en mobilité.
+                </p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="p-5 rounded-md border border-gold/25 bg-gold/5"
+                >
+                  <p className="text-sm text-foreground/80 leading-relaxed italic">
+                    "Cette transition illustre le passage d'une infrastructure <span className="text-gold font-semibold">on-premise</span> vers une gestion moderne basée sur le <span className="text-gold font-semibold">cloud</span>, plus adaptée aux environnements actuels."
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </SectionCard>
+
           {/* 5. EXEMPLE CONCRET — CG-NAT */}
           <SectionCard>
             <div className="p-6 md:p-8">
