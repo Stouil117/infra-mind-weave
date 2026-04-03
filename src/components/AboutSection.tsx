@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GraduationCap, Network, Shield, Server, BookOpen, Award } from "lucide-react";
 import logoCetim from "@/assets/logo-cetim.png";
 import logoPromeo from "@/assets/logo-promeo.png";
 import logoSenlis from "@/assets/logo-senlis.png";
